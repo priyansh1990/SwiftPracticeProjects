@@ -23,5 +23,13 @@ todoStings.removeFirst()
 var countries=[ "CA":"Canada",
                 "BE":"Belgium",
                 "FR":"France"]
+
 countries["CA"]
-countries["IN"]
+
+//Edit Dictionary
+countries["US"]="United States"
+countries["US"]="United States Of America"
+countries
+
+countries.removeValueForKey("FR")
+
