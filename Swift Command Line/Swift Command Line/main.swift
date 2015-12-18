@@ -8,12 +8,4 @@
 
 import Foundation
 
-var donutsLeft = 6
-while(donutsLeft > 0)
-{
-    print("You have \(donutsLeft) donuts left")
-    donutsLeft = donutsLeft - 1
-    print("You eat one donut")
-}
-print("You are all out of donuts :(")
-
+print("Hello World")

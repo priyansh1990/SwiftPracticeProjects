@@ -41,12 +41,7 @@ class ViewController: UIViewController {
         let range=high-(low-1)
         return (Int(arc4random())%range)+(low-1)
     }
-    
-    
 }
-
-
-import UIKit
 
 class Person
 {
