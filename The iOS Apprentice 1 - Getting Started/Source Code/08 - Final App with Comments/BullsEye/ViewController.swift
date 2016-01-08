@@ -27,6 +27,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var targetLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var roundLabel: UILabel!
+  @IBOutlet weak var test_img: UIImageView!
 
   // This method is called while the app is starting up. At some point the main
   // view controller will be created. It will load its view from the storyboard
@@ -48,7 +49,7 @@ class ViewController: UIViewController {
     let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
     slider.setThumbImage(thumbImageHighlighted, forState: .Highlighted)
     
-    let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
+    let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     
     if let trackLeftImage = UIImage(named: "SliderTrackLeft") {
       let trackLeftResizable = trackLeftImage.resizableImageWithCapInsets(insets)
@@ -56,6 +57,8 @@ class ViewController: UIViewController {
     }
     if let trackRightImage = UIImage(named: "SliderTrackRight") {
       let trackRightResizable = trackRightImage.resizableImageWithCapInsets(insets)
+      
+      test_img.image=trackRightResizable;
       slider.setMaximumTrackImage(trackRightResizable, forState: .Normal)
     }
   }
