@@ -32,18 +32,16 @@ class ChecklistViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        return 50
+        return 5
     }
-
-    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("ChecklistItem", forIndexPath: indexPath)
         
+        cell.accessoryType = .None
         let label = tableView.viewWithTag(1000) as! UILabel
-        
-        
+    
         switch indexPath.row % 5
         {
         case 0:
@@ -57,9 +55,8 @@ class ChecklistViewController: UITableViewController {
         case 4:
             label.text = "Eat ice cream"
         default:
-            label.text = "Lear Swift"
+            label.text = "Learn Swift"
         }
-        
         return cell
     }
     
@@ -76,7 +73,6 @@ class ChecklistViewController: UITableViewController {
                 cell.accessoryType = .None
             }
         }
-        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
