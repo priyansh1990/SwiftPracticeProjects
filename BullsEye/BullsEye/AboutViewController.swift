@@ -10,9 +10,10 @@ import UIKit
 
 class AboutViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textView.text=" \n\n" + " ￼￼*** Bull’s Eye ***" + " \n\n" + "Welcome to the awesome game of Bull’s Eye where you can win points and fame by dragging a slider. Your goal is to place the slider as close as possible to the target value. The closer you are, the more points you score. Enjoy!"
         // Do any additional setup after loading the view.
     }
 
@@ -22,6 +23,11 @@ class AboutViewController: UIViewController {
     }
     
 
+    @IBAction func close(sender: AnyObject)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -22,6 +22,25 @@ class ViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, forState: .Normal)
+        
+        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
+        slider.setThumbImage(thumbImageHighlighted, forState: .Highlighted)
+        
+        let insets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right:15)
+        
+        if let trackLeftImage = UIImage(named: "SliderTrackLeft") {
+            let trackLeftResizable = trackLeftImage.resizableImageWithCapInsets(insets)
+            slider.setMinimumTrackImage(trackLeftResizable, forState: .Normal)
+        }
+        if let trackRightImage = UIImage(named: "SliderTrackRight") {
+            let trackRightResizable = trackRightImage.resizableImageWithCapInsets(insets)
+            slider.setMaximumTrackImage(trackRightResizable, forState: .Normal)
+        }
+
+        
         startNewGame()
         updatelabel()
     }
@@ -39,6 +58,14 @@ class ViewController: UIViewController {
 
     @IBAction func startOver(sender: AnyObject)
     {
+        let transition = CATransition()
+        transition.type = kCATransitionFade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        
+        // This makes the animation go.
+        view.layer.addAnimation(transition, forKey: nil)
+
         startNewGame()
         updatelabel()
     }
